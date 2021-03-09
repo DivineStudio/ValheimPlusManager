@@ -1,6 +1,8 @@
-﻿namespace ValheimPlusManager.Core.ViewModels
+using ValheimPlusManager.Core.ViewModels;
+
+namespace ValheimPlusManager.Core.ViewModels
 {
-    public class UpdateViewModel
+    public class UpdateViewModel : BaseViewModel
     {
     }
 }

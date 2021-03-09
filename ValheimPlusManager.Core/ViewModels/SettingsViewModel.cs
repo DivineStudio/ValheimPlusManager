@@ -1,6 +1,9 @@
-﻿namespace ValheimPlusManager.Core.ViewModels
+using ValheimPlusManager.Core.ViewModels;
+
+
+namespace ValheimPlusManager.Core.ViewModels
 {
-    public class SettingsViewModel
+    public class SettingsViewModel : BaseViewModel
     {
     }
 }

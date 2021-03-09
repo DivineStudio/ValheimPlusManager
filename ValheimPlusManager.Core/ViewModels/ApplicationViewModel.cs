@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
+using ValheimPlusManager.Core.ViewModels;
 
 namespace ValheimPlusManager.Core.ViewModels
 {
-    public class ApplicationViewModel : MvxViewModel
+    public class ApplicationViewModel : BaseViewModel
     {
         #region Fields
 
