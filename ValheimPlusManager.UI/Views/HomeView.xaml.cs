@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +18,10 @@ using ValheimPlusManager.Core.ViewModels;
 
 namespace ValheimPlusManager.UI.Views
 {
-    [MvxViewFor(typeof(ApplicationViewModel))]
-    public partial class ApplicationView : MvxWpfView
+    [MvxViewFor(typeof(HomeViewModel))]
+    public partial class HomeView : MvxWpfView
     {
-        public ApplicationView()
+        public HomeView()
         {
             InitializeComponent();
         }

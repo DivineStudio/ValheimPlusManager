@@ -1,6 +1,7 @@
-﻿using MvvmCross.IoC;
+using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using ValheimPlusManager.Core.ViewModels;
+using ValheimPlusManager.Core.ViewModels.Home;
 
 namespace ValheimPlusManager.Core
 {
@@ -13,7 +14,13 @@ namespace ValheimPlusManager.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ApplicationViewModel>();
+            CreatableTypes()
+                .EndingWith("Repository")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
+            // There needs to be a determination of which ViewModel is to be displayed first.
+            RegisterAppStart<HomeViewModel>();
         }
     }
 }
