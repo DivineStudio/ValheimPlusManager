@@ -18,10 +18,10 @@ using ValheimPlusManager.Core.ViewModels;
 
 namespace ValheimPlusManager.UI.Views
 {
-    [MvxViewFor(typeof(SettingsViewModel))]
-    public partial class SettingsView : MvxWpfView
+    [MvxViewFor(typeof(HomeViewModel))]
+    public partial class HomeView : MvxWpfView
     {
-        public SettingsView()
+        public HomeView()
         {
             InitializeComponent();
         }
