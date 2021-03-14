@@ -21,6 +21,8 @@ namespace ValheimPlusManager.Core
 
             // There needs to be a determination of which ViewModel is to be displayed first.
             RegisterAppStart<HomeViewModel>();
+
+            
         }
     }
 }
