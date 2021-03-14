@@ -5,12 +5,16 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValheimPlusManager.UI", "ValheimPlusManager.UI\ValheimPlusManager.UI.csproj", "{0F4EAC1A-4C09-4892-BEEB-9DCE81144560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValheimPlusManager.Core", "ValheimPlusManager.Core\ValheimPlusManager.Core.csproj", "{41ED3BA3-C961-465C-8409-EA849A7D6EFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValheimPlusManager.Core", "ValheimPlusManager.Core\ValheimPlusManager.Core.csproj", "{41ED3BA3-C961-465C-8409-EA849A7D6EFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AAECF06-BC17-4DB9-A8BF-BA7894D3D900}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{86A3ED61-29B5-41D1-B5AF-912326AA4501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValheimPlusManager.Core.Test", "ValheimPlusManager.Core.Test\ValheimPlusManager.Core.Test.csproj", "{44F19487-D465-4388-B0DC-ED3484CDDA17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +30,16 @@ Global
 		{41ED3BA3-C961-465C-8409-EA849A7D6EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41ED3BA3-C961-465C-8409-EA849A7D6EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41ED3BA3-C961-465C-8409-EA849A7D6EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F19487-D465-4388-B0DC-ED3484CDDA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F19487-D465-4388-B0DC-ED3484CDDA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F19487-D465-4388-B0DC-ED3484CDDA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F19487-D465-4388-B0DC-ED3484CDDA17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44F19487-D465-4388-B0DC-ED3484CDDA17} = {86A3ED61-29B5-41D1-B5AF-912326AA4501}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F36A9A2C-27BA-4B4E-A199-B6D4E61F3F0E}
