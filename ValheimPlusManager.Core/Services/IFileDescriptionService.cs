@@ -6,18 +6,6 @@ namespace ValheimPlusManager.Core.Services
 {
     public interface IFileDescriptionService
     {
-        Version GetProductVersion(Uri filepath)
-        {
-
-
-            try
-            {
-
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
+        Version GetProductVersion(Uri filepath);
     }
 }
