@@ -7,12 +7,22 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="7.1.2" />
+    <PackageReference Include="MvvmCross.Platforms.Wpf" Version="7.1.2" />
+    <PackageReference Include="NLog" Version="4.7.8" />
     <PackageReference Include="Salaros.ConfigParser" Version="0.3.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.debug.config">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
