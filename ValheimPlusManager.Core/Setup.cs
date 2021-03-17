@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MvvmCross;
 using MvvmCross.Platforms.Wpf.Core;
 using MvvmCross.ViewModels;
 using NLog;
+using ValheimPlusManager.Core.Factories;
+using ValheimPlusManager.Core.Repositories;
+using ValheimPlusManager.Core.Services;
 
 namespace ValheimPlusManager.Core
 {
@@ -17,6 +21,8 @@ namespace ValheimPlusManager.Core
         protected override void InitializeFirstChance()
         {
             SetNLogConfigLocation();
+            SetIoC();
+            base.InitializeFirstChance();
         }
 
         private void SetNLogConfigLocation()
@@ -29,6 +35,10 @@ namespace ValheimPlusManager.Core
             {
                 NLog.LogManager.Configuration = new NLog.Config.XmlLoggingConfiguration("NLog.config");
             }
+        }
+
+        private void SetIoC()
+        {
         }
     }
 }

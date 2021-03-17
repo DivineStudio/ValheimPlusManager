@@ -1,21 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MvvmCross.Core;
-using MvvmCross.IoC;
-using MvvmCross.Tests;
 using NUnit;
 using NUnit.Framework;
 
 namespace ValheimPlusManager.Core.Test
 {
     [TestFixture]
-    public abstract class BaseFixture : MvxIoCSupportingTest, IFixture
+    public class BaseFixture : IFixture
     {
-        public BaseFixture()
-        {
-        }
-
+        [Description("Base Test Fixture Class")]
         public virtual void SetUp()
         {
         }

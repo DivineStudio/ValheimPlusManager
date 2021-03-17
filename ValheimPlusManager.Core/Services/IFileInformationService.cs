@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ValheimPlusManager.Core.Services
 {
-    public interface IFileDescriptionService
+    public interface IFileInformationService
     {
         Version GetProductVersion(Uri filepath);
     }

@@ -16,7 +16,7 @@ namespace ValheimPlusManager.Core.Repositories
 
             if (filepath.IsFile)
             {
-                FileVersionInfo.GetVersionInfo(filepath.LocalPath); 
+                fileVersionInfo = FileVersionInfo.GetVersionInfo(filepath.LocalPath);
             }
 
             return fileVersionInfo;

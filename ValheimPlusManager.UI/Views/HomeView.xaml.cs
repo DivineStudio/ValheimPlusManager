@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MvvmCross.Platforms.Wpf.Views;
 using MvvmCross.ViewModels;
-using ValheimPlusManager.Core.ViewModels;
+using ValheimPlusManager.Core.ViewModels.Home;
 
 namespace ValheimPlusManager.UI.Views
 {

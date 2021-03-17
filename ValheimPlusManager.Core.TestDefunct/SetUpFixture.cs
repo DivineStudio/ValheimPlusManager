@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using NUnit;
 using NUnit.Framework;
-using MvvmCross.Tests;
 
 namespace ValheimPlusManager.Core.Test
 {
     [SetUpFixture]
-    public class SetUpFixture : MvxIoCSupportingTest, ISetUpFixture
+    public class SetUpFixture : ISetUpFixture
     {
+        [Description("Base One Time Setup Test Fixture Class")]
         public virtual void OneTimeSetup()
         {
         }
