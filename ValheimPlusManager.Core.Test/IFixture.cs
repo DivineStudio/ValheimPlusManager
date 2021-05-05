@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace ValheimPlusManager.Core.Test
+namespace ValheimPlusManager.Core.Test.IntegrationTests
 {
     public interface IFixture
     {

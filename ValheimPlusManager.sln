@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6CBEED1-C2F7-449A-98A7-71803B021CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValheimPlusManager.Core.Test", "ValheimPlusManager.Core.Test\ValheimPlusManager.Core.Test.csproj", "{AA72DD24-374F-4C0C-A597-7266E1AC9EAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValheimPlusManager.Core.Integration.Test", "ValheimPlusManager.Core.Test\ValheimPlusManager.Core.Integration.Test.csproj", "{AA72DD24-374F-4C0C-A597-7266E1AC9EAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValheimPlusManager.Core.Unit.Test", "ValheimPlusManager.Core.Unit.Test\ValheimPlusManager.Core.Unit.Test.csproj", "{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,12 +36,17 @@ Global
 		{AA72DD24-374F-4C0C-A597-7266E1AC9EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA72DD24-374F-4C0C-A597-7266E1AC9EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA72DD24-374F-4C0C-A597-7266E1AC9EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AA72DD24-374F-4C0C-A597-7266E1AC9EAB} = {C6CBEED1-C2F7-449A-98A7-71803B021CE0}
+		{86CE085C-F6D3-4B2B-ABEC-63A87CF48A70} = {C6CBEED1-C2F7-449A-98A7-71803B021CE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F36A9A2C-27BA-4B4E-A199-B6D4E61F3F0E}

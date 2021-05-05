@@ -1,0 +1,7 @@
+// JSON Template for Valheim Plus Manager Configuration:
+
+{
+	"GameLocation" : ""
+	"DllLocation" : "\BepInEx\plugins\ValheimPlus.dll",
+	"ConfigLocation" : "\BepInEx\config\valheim_plus.cfg"
+}

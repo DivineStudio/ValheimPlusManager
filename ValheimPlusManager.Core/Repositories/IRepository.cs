@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace ValheimPlusManager.Core.Repositories
 {
-    public class IRepository
+    public interface IRepository
     {
+        /// <summary>
+        /// Is used to convey whether or not the Serilog Logger is created.
+        /// Should call the base class of the inheriting class' IsLoggerCreated property.
+        /// </summary>
+        public bool IsLoggerCreated { get; }
     }
 }

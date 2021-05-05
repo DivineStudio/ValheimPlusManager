@@ -1,5 +1,7 @@
+using System;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ValheimPlusManager.Core.ViewModels.ErrorHandling;
 
 namespace ValheimPlusManager.Core.ViewModels
 {
@@ -15,6 +17,7 @@ namespace ValheimPlusManager.Core.ViewModels
         }
 
         #region Properties
+        protected ErrorViewModel Errors { get; } = new Lazy<ErrorViewModel>().Value;
 
         protected IMvxNavigationService MvxNavigationService { get; private set; }
 

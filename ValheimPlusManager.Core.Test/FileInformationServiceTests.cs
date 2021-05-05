@@ -1,27 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using ValheimPlusManager.Core.Services;
 using ValheimPlusManager.Core.Repositories;
 using ValheimPlusManager.Core.Factories;
-using NUnit;
 using NUnit.Framework;
 using System.IO;
-using MvvmCross.Tests;
-using MvvmCross;
 
 namespace ValheimPlusManager.Core.Test.IntegrationTests
 {
     [TestFixture]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "ExcludeTestMethodNames")]
     public class FileInformationServiceTests : BaseFixture
     {
-        private string _parentDirectory;
-        private Uri _testExeFilePath;
+        private readonly string _solutionDirectory;
+        private readonly Uri _testExeFilePath;
 
         public FileInformationServiceTests()
         {
-            _parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
-            _testExeFilePath = new Uri($@"{_parentDirectory}\TestExe\Test.exe");
+            _solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+            _testExeFilePath = new Uri($@"{_solutionDirectory}\TestExe\Test.exe");
         }
 
         protected override void AdditionalSetup()
@@ -33,12 +29,19 @@ namespace ValheimPlusManager.Core.Test.IntegrationTests
         }
 
         [Test]
+        public void IsLoggerCreated()
+        {
+            var sut = base.Ioc.Resolve<IFileInformationService>();
+            Assert.NotNull(sut.IsLoggerCreated);
+        }
+
+        [Test]
         public void GetProductVersion_SuccessfulReturn()
         {
             base.ClearAll();
 
             var expected = "1.2.3.4567";
-            var actual = Ioc.Resolve<IFileInformationService>().GetProductVersion(_testExeFilePath).ToString();
+            var actual = Ioc.Resolve<IFileInformationService>().GetProductVersion(_testExeFilePath.ToString()).ToString();
 
             Assert.AreEqual(actual, expected);
         }
@@ -48,7 +51,7 @@ namespace ValheimPlusManager.Core.Test.IntegrationTests
         {
             base.ClearAll();
 
-            var actual = Ioc.Resolve<IFileInformationService>().GetProductVersion(new Uri("http://10.10.10.1"));
+            var actual = Ioc.Resolve<IFileInformationService>().GetProductVersion("http://10.10.10.1");
 
             Assert.IsNull(actual);
         }

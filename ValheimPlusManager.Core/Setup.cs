@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using MvvmCross;
 using MvvmCross.Platforms.Wpf.Core;
 using MvvmCross.ViewModels;
-using NLog;
+using Octokit;
+using Octokit.Reactive;
+using Serilog;
+using Serilog.Events;
 using ValheimPlusManager.Core.Factories;
 using ValheimPlusManager.Core.Repositories;
 using ValheimPlusManager.Core.Services;
@@ -20,25 +24,44 @@ namespace ValheimPlusManager.Core
 
         protected override void InitializeFirstChance()
         {
-            SetNLogConfigLocation();
+            SetSerilogConfig();
             SetIoC();
             base.InitializeFirstChance();
         }
 
-        private void SetNLogConfigLocation()
+        private void SetSerilogConfig()
         {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var logFolder = "logs";
+            var logsDirectory = Path.Combine(currentDirectory, logFolder);
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                NLog.LogManager.Configuration = new NLog.Config.XmlLoggingConfiguration("NLog.debug.config");
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
+                    .Enrich.FromLogContext()
+                    .WriteTo.File(Path.Combine(logsDirectory, "debugLog"))
+                    .CreateLogger();
             }
             else
             {
-                NLog.LogManager.Configuration = new NLog.Config.XmlLoggingConfiguration("NLog.config");
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                    .Enrich.FromLogContext()
+                    .WriteTo.File(Path.Combine(logsDirectory, "log"))
+                    .CreateLogger();
             }
         }
 
         private void SetIoC()
         {
+            Mvx.IoCProvider.RegisterSingleton<IGitHubClient>(GitHubClientFactory.Create());
+
+            Mvx.IoCProvider.RegisterSingleton<IFileInformationRepository>(RepositoryFactory.Create<IFileInformationRepository>());
+            Mvx.IoCProvider.RegisterSingleton<IGitHubRepository>(RepositoryFactory.Create<IGitHubRepository>());
+
+            Mvx.IoCProvider.RegisterSingleton<IFileInformationService>(ServiceFactory.Create<IFileInformationService>());
+            Mvx.IoCProvider.RegisterSingleton<IGitHubService>(ServiceFactory.Create<IGitHubService>());
         }
     }
 }

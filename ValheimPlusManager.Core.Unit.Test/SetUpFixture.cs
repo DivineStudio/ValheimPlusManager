@@ -2,7 +2,7 @@ using NUnit.Framework;
 using MvvmCross.Tests;
 using Serilog;
 
-namespace ValheimPlusManager.Core.Test.IntegrationTests
+namespace ValheimPlusManager.Core.Unit.Test
 {
     [SetUpFixture]
     public class SetUpFixture : MvxIoCSupportingTest, ISetUpFixture

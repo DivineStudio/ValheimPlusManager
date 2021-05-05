@@ -1,12 +1,13 @@
 using System;
 using MvvmCross;
+using Octokit;
+using Serilog;
 using ValheimPlusManager.Core.Repositories;
-using ValheimPlusManager.Core.Services;
 
 namespace ValheimPlusManager.Core.Factories
 {
     /// <summary>
-    /// Factory for returning concrete service objects.
+    /// Factory for returning concrete repository objects.
     /// </summary>
     public static class RepositoryFactory
     {
@@ -23,6 +24,10 @@ namespace ValheimPlusManager.Core.Factories
             if (typeof(TInterface) == typeof(IFileInformationRepository))
             {
                 service = new FileInformationRepository() as TInterface;
+            }
+            else if (typeof(TInterface) == typeof(IGitHubRepository))
+            {
+                service = new GitHubRepository(Mvx.IoCProvider.Resolve<IGitHubClient>()) as TInterface;
             }
             else
             {

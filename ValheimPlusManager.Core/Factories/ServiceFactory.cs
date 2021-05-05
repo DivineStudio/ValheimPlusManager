@@ -1,5 +1,6 @@
 using System;
 using MvvmCross;
+using Serilog;
 using ValheimPlusManager.Core.Repositories;
 using ValheimPlusManager.Core.Services;
 
@@ -23,6 +24,10 @@ namespace ValheimPlusManager.Core.Factories
             if (typeof(TInterface) == typeof(IFileInformationService))
             {
                 service = new FileInformationService(Mvx.IoCProvider.Resolve<IFileInformationRepository>()) as TInterface;
+            }
+            else if (typeof(TInterface) == typeof(IGitHubService))
+            {
+                service = new GitHubService(Mvx.IoCProvider.Resolve<IGitHubRepository>()) as TInterface;
             }
             else
             {

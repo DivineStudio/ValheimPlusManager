@@ -1,0 +1,86 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="ValheimPlusManager.Core.Integration.Test" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="ValheimPlusManager.Core.Test.IntegrationTests" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="FileInformationServiceTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.FileInformationServiceTests.GetProductVersion_IncorrectlyProvidedUriForFilepath_ReturnsNull" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetProductVersion_IncorrectlyProvidedUriForFilepath_ReturnsNull" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.FileInformationServiceTests.GetProductVersion_SuccessfulReturn" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetProductVersion_SuccessfulReturn" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="GitHubServiceTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.DownloadExplicitReleaseAsync_SuccessfullyDownloadVPWindowsClient" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="DownloadExplicitReleaseAsync_SuccessfullyDownloadVPWindowsClient(WindowsClient)" />
+                        <Property Name="DisplayName" Value="DownloadExplicitReleaseAsync_SuccessfullyDownloadVPWindowsClient(WindowsServer)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.DownloadLatestReleaseAsync_SuccessfullyDownloadVPWindowsClient" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="DownloadLatestReleaseAsync_SuccessfullyDownloadVPWindowsClient(WindowsClient)" />
+                        <Property Name="DisplayName" Value="DownloadLatestReleaseAsync_SuccessfullyDownloadVPWindowsClient(WindowsServer)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.GetAllReleasesAsync_SuccessfullyRetrieveListOfReleases" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetAllReleasesAsync_SuccessfullyRetrieveListOfReleases" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.GetExplicitReleaseAsync_SuccessfullyRetrieveExplicitReleases" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetExplicitReleaseAsync_SuccessfullyRetrieveExplicitReleases" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.GetLatestReleaseAsync_SuccessfullyRetrieveLatestReleases" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetLatestReleaseAsync_SuccessfullyRetrieveLatestReleases" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.InstallAsync_SuccessfullyInstallDownloadedClient" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="InstallAsync_SuccessfullyInstallDownloadedClient(WindowsClient)" />
+                        <Property Name="DisplayName" Value="InstallAsync_SuccessfullyInstallDownloadedClient(WindowsServer)" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="ValheimPlusManager.Core.Test.IntegrationTests.GitHubServiceTests.IsLoggerCreated" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="IsLoggerCreated" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>

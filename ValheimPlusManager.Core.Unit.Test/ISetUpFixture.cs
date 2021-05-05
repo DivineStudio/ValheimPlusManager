@@ -1,7 +1,6 @@
-using NUnit;
 using NUnit.Framework;
 
-namespace ValheimPlusManager.Core.Test
+namespace ValheimPlusManager.Core.Unit.Test
 {
     public interface ISetUpFixture
     {

@@ -1,17 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using NLog;
 using ValheimPlusManager.Core.Repositories;
+using ValheimPlusManager.Core.Exceptions;
 
 namespace ValheimPlusManager.Core.Services
 {
-    public class FileInformationService : BaseService, IFileInformationService
+    public class FileInformationService : BaseService<FileInformationService>, IFileInformationService
     {
         #region Fields
 
+        /// <summary>
+        /// IoC provided <see cref="IFileInformationRepository"/> object.
+        /// </summary>
         private IFileInformationRepository _fileInformationRepository;
-
         #endregion
 
         public FileInformationService(IFileInformationRepository fileInformationRepository)
@@ -19,40 +19,31 @@ namespace ValheimPlusManager.Core.Services
             _fileInformationRepository = fileInformationRepository;
         }
 
-        #region Properties
-
-        protected override ILogger Logger => NLog.LogManager.GetCurrentClassLogger();
-
-        #endregion
+        public override bool IsLoggerCreated => base.IsLoggerCreated;
 
         #region Methods
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="filepath"></param>
-        /// <returns></returns>
-        public Version GetProductVersion(Uri filepath)
+        /// <inheritdoc/>
+        public Version GetProductVersion(string filepath)
         {
             Version version = null;
+            var productVersion = string.Empty;
 
-            try
+            if (Uri.TryCreate(filepath, UriKind.Absolute, out var filepathUri) && filepathUri.IsFile)
             {
-                var fileVersionInfo = _fileInformationRepository.GetFileVersionInfo(filepath);
-                if (fileVersionInfo == null || !Version.TryParse(fileVersionInfo.ProductVersion, out version))
+                productVersion = _fileInformationRepository?.GetProductVersion(filepathUri);
+
+                if (!Version.TryParse(productVersion, out version))
                 {
-                    return null;
-                }
-
-                return version;
+                    throw new TryParseException($"Could not parse {nameof(Version)} from {nameof(productVersion)}. {nameof(productVersion)}={productVersion}");
+                } 
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Debug(ex);
-                return null;
+                throw new ArgumentException($"Invalid filepath. {nameof(filepath)}={filepath}{Environment.NewLine}.");
             }
-        }
 
+            return version;
+        }
         #endregion
     }
 }

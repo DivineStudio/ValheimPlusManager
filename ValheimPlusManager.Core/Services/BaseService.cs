@@ -1,12 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using NLog;
+using Serilog;
+using ValheimPlusManager.Core.Extensions;
 
 namespace ValheimPlusManager.Core.Services
 {
-    public abstract class BaseService : IService
+    public class BaseService<TChildClass> : IService
+        where TChildClass : class
     {
-        protected abstract ILogger Logger { get; }
+        protected BaseService()
+        {
+            Logger = Log.Logger.ForContext<TChildClass>();
+        }
+
+        /// <summary>
+        /// Serilog Logger object.
+        /// </summary>
+        protected ILogger Logger { get; }
+        public virtual bool IsLoggerCreated => Logger != null;
     }
 }

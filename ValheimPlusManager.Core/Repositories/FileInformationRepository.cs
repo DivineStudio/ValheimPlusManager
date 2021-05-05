@@ -1,25 +1,23 @@
 using System;
 using System.Diagnostics;
+using Serilog;
 
 namespace ValheimPlusManager.Core.Repositories
 {
-    public class FileInformationRepository : BaseRepository, IFileInformationRepository
+    public class FileInformationRepository : BaseRepository<FileInformationRepository>, IFileInformationRepository
     {
         public FileInformationRepository()
         {
-
         }
 
-        public FileVersionInfo GetFileVersionInfo(Uri filepath)
+        public override bool IsLoggerCreated => base.IsLoggerCreated;
+
+        #region Methods
+        /// <inheritdoc/>
+        public string GetProductVersion(Uri filepath)
         {
-            FileVersionInfo fileVersionInfo = null;
-
-            if (filepath.IsFile)
-            {
-                fileVersionInfo = FileVersionInfo.GetVersionInfo(filepath.LocalPath);
-            }
-
-            return fileVersionInfo;
-        }
+            return FileVersionInfo.GetVersionInfo(filepath.LocalPath)?.ProductVersion;
+        } 
+        #endregion
     }
 }

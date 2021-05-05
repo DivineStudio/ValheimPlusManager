@@ -1,6 +1,5 @@
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using ValheimPlusManager.Core.ViewModels;
 using ValheimPlusManager.Core.ViewModels.Home;
 
 namespace ValheimPlusManager.Core
